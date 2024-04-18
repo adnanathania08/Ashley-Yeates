@@ -1,0 +1,442 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* ---------MAIN-CONTAINER------------- */
+.main-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+/* ----------------NAVBAR------------- */
+nav .navbar {
+  /* background-color: blanchedalmond; */
+  border-bottom: 1px solid lightgray;
+  font-family: "Oswald", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 30px 5px 30px;
+}
+.image {
+  width: 150px;
+}
+.image img {
+  width: 100%;
+}
+.navbar .menu {
+  display: flex;
+  gap: 20px;
+}
+.menu a {
+  text-decoration: none;
+  color: black;
+  font-size: larger;
+}
+.navbar .search i {
+  font-size: larger;
+  font-weight: 900;
+}
+.hamburger {
+  font-size: 30px;
+  font-weight: 900;
+  display: none;
+}
+.resmenu {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .menu a {
+    display: none;
+  }
+  .image {
+    margin-left: 80px;
+  }
+  .hamburger {
+    display: block;
+  }
+  .resmenu {
+    position: absolute;
+    z-index: 1000;
+    background-color: white;
+    display: none;
+    width: 100%;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid lightgray;
+  }
+  .resmenu .inmenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  .inmenu a {
+    text-decoration: none;
+    color: black;
+    font-size: larger;
+    font-family: "Oswald", sans-serif;
+  }
+}
+@media (max-width: 523px) {
+  .image {
+    margin-left: 60px;
+  }
+  nav .navbar {
+    padding: 5px 10px 5px 10px;
+  }
+}
+@media (max-width: 392px) {
+  .image {
+    margin-left: 40px;
+  }
+}
+/* ------------------------MAIN-BODY--------------------- */
+.parent {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  border-bottom: 1px solid lightgrey;
+}
+
+/* Styling for the slider container */
+.slider-container {
+  overflow: hidden;
+  width: 40%; /* Set initial width to 100% */
+  max-width: 600px;
+  position: relative;
+
+  height: fit-content; /* Set maximum width */
+  margin: 0 auto; /* Center align */
+}
+
+/* Flex container for the slides */
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+/* Individual slide */
+.slide {
+  flex: 0 0 100%;
+}
+
+/* Ensure images fill their containers */
+.slide img {
+  width: 100%; /* Make images fill their containers */
+}
+
+/* Styling for the progress bars container */
+.progress-bars {
+  bottom: 10px;
+  left: 0;
+  width: 100%; /* Fill the width of the slider */
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* Styling for each progress bar */
+.progress-bar {
+  height: 5px;
+  background-color: #ccc;
+  margin: 0 2px;
+  flex-grow: 1;
+  width: 10px;
+}
+
+/* Styling for active progress bar */
+.active {
+  background-color: #4d4d4d;
+}
+
+/* Styling for arrow navigation */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-20%);
+  font-size: 24px;
+  color: black;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  z-index: 1;
+}
+
+/* Show arrows on slider container hover */
+.slider-container:hover .arrow {
+  opacity: 1;
+}
+
+/* Positioning for left arrow */
+.arrow.left {
+  left: 2px;
+}
+
+/* Positioning for right arrow */
+.arrow.right {
+  right: 3px;
+}
+
+/* CSS for square boxes */
+.square-box {
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+  display: inline-block;
+}
+
+/* Different colors for square boxes */
+.red-box {
+  background-color: #252e41;
+}
+
+.blue-box {
+  background-color: #a45848;
+}
+
+.green-box {
+  background-color: #eaded2;
+}
+
+.yellow-box {
+  background-color: #746d50;
+}
+
+/* Styling for sub-menu */
+.sub-menu {
+  margin-top: 10px;
+}
+
+.right-container {
+  width: 50%; /* Set the width to 50% */
+}
+
+.heading {
+  font-family: "Libre Bodoni", serif;
+  font-weight: 400;
+  font-size: larger;
+  padding: 15px 0px;
+}
+.para-text {
+  font-weight: 200;
+  font-size: large;
+  font-family: "Sen", sans-serif;
+  padding: 15px 0px;
+  line-height: 1.5;
+}
+.Dimensions {
+  padding: 15px 0px;
+  font-weight: 200;
+  font-size: large;
+  font-family: "Sen", sans-serif;
+}
+.Dimensions .dark {
+  font-weight: 900;
+}
+.materials {
+  font-weight: 200;
+  font-size: large;
+  font-family: "Sen", sans-serif;
+  padding: 15px 0px;
+}
+.materials .dark {
+  font-weight: 900;
+}
+.col40 {
+  font-weight: 200;
+  font-size: large;
+  font-family: "Sen", sans-serif;
+  padding: 15px 0px;
+}
+.mailss {
+  font-weight: 200;
+  font-size: large;
+  font-family: "Sen", sans-serif;
+  padding: 15px 0px;
+}
+#toggle-open {
+  width: fit-content;
+  background-color: lightgrey;
+  font-weight: 200;
+  font-size: large;
+  font-family: "Sen", sans-serif;
+  margin: 15px 0px;
+  padding: 5px;
+  border-radius: 5px;
+}
+#toggle-close {
+  font-weight: 200;
+  font-size: large;
+  font-family: "Sen", sans-serif;
+  padding: 15px 0px;
+}
+#toggle-open-1 {
+  font-weight: 200;
+  font-family: "Sen", sans-serif;
+  padding: 15px 0px;
+}
+#toggle-open-2 {
+  font-weight: 200;
+  font-family: "Sen", sans-serif;
+  padding: 15px 0px;
+}
+#toggle-open-3 {
+  font-weight: 200;
+  font-family: "Sen", sans-serif;
+  padding: 15px 0px;
+}
+.container-toggle {
+  width: fit-content;
+  background-color: lightgrey;
+  font-weight: 200;
+  font-size: large;
+  font-family: "Sen", sans-serif;
+  margin: 15px 0px;
+  padding: 5px;
+  border-radius: 5px;
+}
+.submenu-toggle1 {
+  font-weight: 200;
+  font-family: "Sen", sans-serif;
+  padding: 15px 0px;
+}
+.submenu-toggle2 {
+  font-weight: 200;
+  font-family: "Sen", sans-serif;
+  padding: 15px 0px;
+}
+.submenu-toggle3 {
+  font-weight: 200;
+  font-family: "Sen", sans-serif;
+  padding: 15px 0px;
+}
+/* Responsive adjustments */
+@media (max-width: 800px) {
+  .parent {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .right-container {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .slider-container {
+    width: 90%; /* Adjust width for smaller screens */
+  }
+}
+
+/*next-style*/
+
+.submenu {
+  display: none;
+}
+.box {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+}
+.red {
+  background-color: #746d50;
+}
+.green {
+  background-color: #252e41;
+}
+.blue {
+  background-color: #eaded2;
+}
+.yellow {
+  background-color: #a45848;
+}
+
+/* --------------------FOOTER------------- */
+footer {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.para-text1 {
+  font-size: 12px;
+  font-weight: 200;
+  font-size: large;
+  font-family: "Sen", sans-serif;
+}
+.items {
+  font-size: 16px;
+  font-weight: 200;
+  font-size: large;
+  font-family: "Sen", sans-serif;
+}
+
+.column {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+/* Style changes for menu */
+.column.menu ul {
+  list-style: none; /* Remove bullet points */
+  padding-left: 0; /* Remove indentation */
+}
+
+.column.menu li {
+  margin-bottom: 5px; /* Spacing between menu items */
+}
+
+/* Style changes for better layout (same as before) */
+.column h3 {
+  margin-bottom: 5px;
+  font-weight: 400;
+  font-size: 20px; /* Set font size to 16 pixels */
+  font-family: "Oswald", sans-serif; /* Applying Google Font */
+}
+
+.social-links {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+  font-weight: 200;
+  font-size: large;
+  font-family: "Sen", sans-serif;
+}
+
+.social-links li {
+  margin-bottom: 5px;
+}
+
+.copy {
+  padding-left: 30px;
+  font-weight: 200;
+  font-size: large;
+  font-family: "Sen", sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  .column {
+    flex: 50%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .column {
+    flex: 100%;
+  }
+}
+
+/* Add this to style the icon */
+.column h3 i {
+  margin-right: 5px; /* Add some space between icon and text */
+  color: black; /* Set icon color to black */
+}
+
+/* Add this to style the social media platform names */
+.social-links li span {
+  margin-left: 5px; /* Add space between icon and platform name */
+}
